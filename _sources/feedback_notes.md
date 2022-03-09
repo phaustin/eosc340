@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-# Climate sensitivity definitons
+# Climate sensitivity definitions
 
 A short note that defines terms used in our discussions of climate sensitivity and feedback
 
@@ -100,7 +100,7 @@ where $\lambda$ ($K/(W\,m^{-2})$) is called the **climate sensitivity parameter*
 
 Finally, suppose we doubled the $CO_2$ from its preindustrial concentration of 280 ppm.  We know
 from the Day 9 reading that that corresponds to $\Delta F = 3.8\ W\,m^{-2}$.  The
-**equilibrium climate senstivity (ECS)** is defined as the final 
+**equilibrium climate sensitivity (ECS)** is defined as the final 
 equilibrium temperature change due to $CO_2$ doubling, and from the above, if only the Planck
 feedback was operating, we would get:
 
