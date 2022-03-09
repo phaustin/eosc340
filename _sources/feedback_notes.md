@@ -74,7 +74,7 @@ $$(eq:stock2)
 In equilibrium:  $d \Delta E/dt = 0$, so {eq}`eq:stock2` becomes:
 
 $$
-\Delta F + f_{planck} \Delta T
+\Delta F + f_{planck} \Delta T = 0
 $$(eq:stock3)
 
 or rearranging:
