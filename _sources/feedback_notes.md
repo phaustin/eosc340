@@ -90,7 +90,7 @@ Another way to write this is:
 $$
 \begin{align}
 \lambda &= -1/f \\
-\Delta T &= -\lambda \Delta F
+\Delta T &= \lambda \Delta F
 \end{align}
 $$(eq:stock5)
 where $\lambda$ ($K/(W\,m^{-2})$) is called the **climate sensitivity parameter**.
