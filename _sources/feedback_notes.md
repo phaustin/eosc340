@@ -39,6 +39,10 @@ $$
 \frac{d\Delta E}{dt} =\Delta F + \Delta R
 $$(eq:stock)
 
+In words {eq}`eq:stock` says that since the year 1850 we have applied a forcing $\Delta F$ to
+the earth, and it has generated a feedback response $\Delta R$.  Because of this, the
+energy of the planet, $\Delta E$ is changing with time.
+
 ### Stock and flow with Planck feedback
 
 Recall from the Day 8 Modtran worksheet that we defined the Planck feedback $f_{planck}$ as the
