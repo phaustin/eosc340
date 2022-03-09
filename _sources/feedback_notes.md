@@ -105,5 +105,5 @@ equilibrium temperature change due to $CO_2$ doubling, and from the above, if on
 feedback was operating, we would get:
 
 $$
-ECS = \Delta T = \lambda 3.8 = \frac{1}{5.67} 3.8 = 0.7\ K
+ECS = \Delta T = \lambda \times 3.8 = \frac{1}{5.67} 3.8 = 0.7\ K
 $$
