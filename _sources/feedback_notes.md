@@ -107,3 +107,7 @@ feedback was operating, we would get:
 $$
 ECS = \Delta T = \lambda \times 3.8 = \frac{1}{5.67} 3.8 = 0.7\ K
 $$
+
+In fact, $\Delta T$ will be much larger than this, because we have to include all the other
+amplifying and stabilizing feedbacks that operate in addition to the Planck feedback.  This is
+the topic of Chapter 6 in the textbook.
