@@ -25,10 +25,10 @@ $F$ ($W\,m^{-2}$)
 : radiative forcing due to temperature independent processes like volcanoes, oil combustion
 
 $R$  ($W\,m^{-2}$)
-:radiative response,  net downward radiation at the top of the atmosphere due to temperature dependent processes like surface warming, sea-ice melting.
+: radiative response,  net downward radiation at the top of the atmosphere due to temperature dependent processes like surface warming, sea-ice melting.
 
-$\Delta E$,  $\Delta R$ $(W\,m^{-2})$
-: change from pre-industrial values.  The assumption is that both $\Delta E$ and  $\Delta R$
+$\Delta E$, $\Delta F$ and  $\Delta R$ $(W\,m^{-2})$
+: change from pre-industrial values.  The assumption is that  $\Delta E$, $\Delta F$ and  $\Delta R$
   were zero in the year 1850, and have changed since then.
 
 ## Stock and flow equation for change in  energy
