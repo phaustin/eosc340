@@ -53,7 +53,7 @@ In symbols this is:
 $$
 \Delta R = f_{planck} \Delta T
 $$(eq:delR)
-where $f_{planck}$ is called the **Planck feedback factor**.
+where $f_{planck}$ $(W\,m^{-2}\,K^{-1})$ is called the **Planck feedback factor**.
 
 According to page 4 of the worksheet, 
 
