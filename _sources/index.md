@@ -1,1 +1,2 @@
-# EOSC 340 notes
+# E340 Course Notes
+

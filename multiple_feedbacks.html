@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 20: Stock and flow with multiple feedbacks &#8212; EOSC 340: Global Climate Change</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Day 19: Climate timescales for forcing without feedback" href="climate_forcing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">EOSC 340: Global Climate Change</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   E340 Course Notes
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Sensitivity and feedback
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sensitivity_definitions.html">
+   Day 15: Climate sensitivity definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="climate_forcing.html">
+   Day 19: Climate timescales for forcing without feedback
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Day 20: Stock and flow with multiple feedbacks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/multiple_feedbacks.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#major-climate-feedbacks">
+   Major Climate feedbacks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#water-vapor">
+     Water Vapor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lapse-rate">
+     Lapse rate
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ice-albedo">
+     Ice-albedo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clouds">
+     Clouds
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#climate-sensitivity-and-feedbacks">
+   Climate Sensitivity and Feedbacks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#climate-feedback-factors">
+   Climate Feedback Factors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dessler-s-feedback-notation">
+   Dessler’s feedback notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Day 20: Stock and flow with multiple feedbacks</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#major-climate-feedbacks">
+   Major Climate feedbacks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#water-vapor">
+     Water Vapor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lapse-rate">
+     Lapse rate
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ice-albedo">
+     Ice-albedo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clouds">
+     Clouds
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#climate-sensitivity-and-feedbacks">
+   Climate Sensitivity and Feedbacks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#climate-feedback-factors">
+   Climate Feedback Factors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dessler-s-feedback-notation">
+   Dessler’s feedback notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="day-20-stock-and-flow-with-multiple-feedbacks">
+<h1>Day 20: Stock and flow with multiple feedbacks<a class="headerlink" href="#day-20-stock-and-flow-with-multiple-feedbacks" title="Permalink to this headline">¶</a></h1>
+<p><strong>To review</strong>: <strong>Climate feedbacks</strong> are changes to the net radiative flux into and out of the <em>top
+of the Earth’s atmosphere</em> in response to changes in the Earth’s temperature. They can be included
+in the earth’s energy budget equation in this form:</p>
+<div class="math notranslate nohighlight" id="equation-eq-stock1">
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq-stock1" title="Permalink to this equation">¶</a></span>\[
+\frac{d\Delta E}{dt} =\Delta F+\Delta R=\Delta F+f\Delta T 
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\Delta E\)</span> is the change in the column energy from a reference equilibrium value, the climate
+forcing <span class="math notranslate nohighlight">\(\Delta{F}\)</span> in <span class="math notranslate nohighlight">\(W\,m{-2}\)</span> is a change in the net radiative flux into the top of the Earth’s
+atmosphere (positive downward) that is <em>independent of temperature</em>, <span class="math notranslate nohighlight">\(\Delta\)</span>R is the planet’s
+response to the forcing, which can also be written in terms of the climate feedback <span class="math notranslate nohighlight">\(f\,\Delta T\)</span> as
+a change in the TOA radiative flux that occurs as a result of a change in the Earth’s temperature .
+The <strong>climate feedback factor</strong> <span class="math notranslate nohighlight">\(f\)</span> has units of <span class="math notranslate nohighlight">\(W\,m^{-2}\,K^{-1}\)</span> and is the negative inverse of
+the climate sensitivity (i.e. <span class="math notranslate nohighlight">\(f=-1/\lambda\)</span>).  If <span class="math notranslate nohighlight">\(f\)</span> is positive, then the climate feedback is
+amplifying, and if f is negative then the climate feedback is stabilizing. For the climate to be
+stable, <span class="math notranslate nohighlight">\(f\)</span> must be negative; otherwise, a rise/drop in temperature would feed back into a positive/negative growth rate for and
+drive the Earth to a completely new equilibrium.  However, the total climate feedback factor <span class="math notranslate nohighlight">\(f\)</span>
+characterizes several different feedback processes, some of which are amplifying, and some of which
+are stabilizing.</p>
+<div class="section" id="major-climate-feedbacks">
+<h2>Major Climate feedbacks<a class="headerlink" href="#major-climate-feedbacks" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the Planck feedback, there are many feedbacks that operate in the Earth’s climate
+system, on many different time scales.  However, over the time scale of a human lifetime (<span class="math notranslate nohighlight">\(\sim\)</span>80
+years) there are five main feedback processes that affect the climate.</p>
+<div class="section" id="water-vapor">
+<h3>Water Vapor<a class="headerlink" href="#water-vapor" title="Permalink to this headline">¶</a></h3>
+<p>Water vapour feedback arises because liquid water emits more vapor as it warms.  As the
+temperature of the climate system increases, the maximum amount of water the atmosphere can hold
+also increases.  Since most of the Earth surface is covered in ocean, this warming results in more
+evaporation and increases the amount of water vapour in the Earth’s atmosphere.  Since water vapour
+is a powerful greenhouse gas, this increase in water vapour reduces the amount of long-wave flux
+radiated from the atmosphere to space, causing the temperature to increase even more.  This makes
+water vapour feedback an amplifying feedback process.  It is positive because it acts to decrease
+the negative (upward) outgoing longwave radiation (OLW).</p>
+</div>
+<div class="section" id="lapse-rate">
+<h3>Lapse rate<a class="headerlink" href="#lapse-rate" title="Permalink to this headline">¶</a></h3>
+<p>The strength of the greenhouse effect does not only depend on the amount of greenhouse gas in the
+atmosphere, but also on the atmospheric lapse rate=dT/dz.  If the lapse rate were zero, so that the
+top of the atmosphere were the same temperature as the bottom of the atmosphere, the top of the
+atmosphere would radiate energy to space at the same rate it absorbs energy from below and there
+would be no greenhouse effect.  As the lapse rate gets more negative, the top of the atmosphere
+becomes colder relative to the surface, and the greenhouse effect becomes stronger.</p>
+<p>Exactly how the lapse rate changes as the Earth’s temperature changes is not obvious because it
+depends on many processes, such as the strength of convection and how quickly atmospheric water
+vapour declines with height.  However, simulations done using climate models indicate that as the
+Earth’s temperature rises, the top of the troposphere tends to warm faster than the surface, making
+the lapse rate more positive.  If the lapse rate more positive, then the top-bottom temperature
+contrast and the greenhouse effect are reduced and more outgoing long-wave radiation escapes from
+the top of the atmosphere.  This makes the lapse rate feedback a stabilising feedback process, is
+negative because it increases OLW.</p>
+</div>
+<div class="section" id="ice-albedo">
+<h3>Ice-albedo<a class="headerlink" href="#ice-albedo" title="Permalink to this headline">¶</a></h3>
+<p>Ice and snow generally reflect short-wave radiation much better than rock, dirt, or water.  Snow has
+an albedo of about <span class="math notranslate nohighlight">\(\alpha\)</span> = 0.8-0.9 and ice has a slightly lower albedo between <span class="math notranslate nohighlight">\(\alpha\)</span> =
+0.5-0.7, while the ocean’s albedo is around <span class="math notranslate nohighlight">\(\alpha\)</span> = 0.06 and land is between <span class="math notranslate nohighlight">\(\alpha\)</span> = 0.1-0.3.
+As the Earth’s temperature increases the ice and snow on mountains and near the poles begins to
+melt, reducing the Earth’s albedo and causing more short-wave radiation to be absorbed by the
+surface, increasing the temperature further.  This process is called the ice-albedo feedback, and it
+is an amplifying feedback process. It has a positive sign because it increases the net positive
+downward shortwave.</p>
+</div>
+<div class="section" id="clouds">
+<h3>Clouds<a class="headerlink" href="#clouds" title="Permalink to this headline">¶</a></h3>
+<p>The cloud feedback effect depends on several processes.  As we discussed in the Day 9 notes, low
+clouds tend to reflect more short-wave radiation, cooling the Earth, while high clouds allow short
+wave through but trap outgoing long-wave radiation, warming the Earth.  As the temperature of the
+Earth changes, the amount of high and low clouds will change, altering how much radiation clouds
+trap and reflect.  In addition, changes in the water vapour content of the atmosphere will alter the
+average size of the water droplets in the clouds, which will affect their albedo and emissivity.
+Finally, changes in the atmospheric temperature will affect whether the clouds are made of water
+droplets or ice crystals, which will alter their albedo and emissivity as well.</p>
+<p>The many ways in which clouds could change as the temperature changes makes the cloud feedback
+effect the most uncertain and least understood of all the climate feedbacks.  However, it appears
+that as the temperature of the Earth increases, the amount of low clouds decreases and the amount
+of high clouds increases, warming the climate further and making the cloud feedback an amplifying
+feedback process.</p>
+</div>
+</div>
+<div class="section" id="climate-sensitivity-and-feedbacks">
+<h2>Climate Sensitivity and Feedbacks<a class="headerlink" href="#climate-sensitivity-and-feedbacks" title="Permalink to this headline">¶</a></h2>
+<p>Given this list, how can we learn more about each of these feedbacks, and how they contribute
+to the total feedback <span class="math notranslate nohighlight">\(f\)</span> and the climate sensitivity
+<span class="math notranslate nohighlight">\(\lambda = -1/f\)</span>?</p>
+<p>Repeating equation <a class="reference internal" href="#equation-eq-stock1">(13)</a></p>
+<div class="math notranslate nohighlight" id="equation-eq-stock2">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-stock2" title="Permalink to this equation">¶</a></span>\[ 
+\frac{d\Delta E}{dt} =\Delta F+f\Delta T
+\]</div>
+<p>Where again, <span class="math notranslate nohighlight">\(E\)</span> is the energy stored in the climate system in <span class="math notranslate nohighlight">\(J\,m^{-2}\)</span>, <span class="math notranslate nohighlight">\(\Delta F\)</span> is
+the climate forcing in <span class="math notranslate nohighlight">\(W\,m^{-2}\)</span>, <span class="math notranslate nohighlight">\(\Delta T\)</span> is the average temperature change of the
+climate (usually, but not always, taken to be the surface temperature), and <span class="math notranslate nohighlight">\(f\)</span> is the
+climate feedback factor in <span class="math notranslate nohighlight">\(W\, m^{-2} K^{-1}\)</span>.</p>
+<p>Fortunately, to a good approximation the total feedback can be split into
+individual components:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\Delta E}{dt} =\Delta F+f_{PL} \Delta T+f_{WV} \Delta T+f_{A} \Delta T+f_{LR} \Delta T+f_{C} \Delta T 
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(f_{PL}\)</span> is the feedback factor due to the Planck long-wave radiation feedback, <span class="math notranslate nohighlight">\(f_{WV}\)</span> ik
+that due to the water vapour feedback, <span class="math notranslate nohighlight">\(f_{A}\)</span> is that due to the ice-albedo
+feedback, <span class="math notranslate nohighlight">\(f_{LR}\)</span> is that due to the lapse rate feedback, and
+<span class="math notranslate nohighlight">\(f_{c}\)</span> is that due to the cloud feedback (all in <span class="math notranslate nohighlight">\(W\,m^{-2}\,K^{-1}\)</span>).  For
+simplicity, we can factor the temperature change <span class="math notranslate nohighlight">\(\Delta T\)</span> out of each feedback term and
+write</p>
+<div class="math notranslate nohighlight" id="equation-eq-stock3">
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq-stock3" title="Permalink to this equation">¶</a></span>\[
+\frac{d\Delta E}{dt} =\Delta F+\left(\sum f_{i}  \right)\Delta T 
+\]</div>
+<p>Since at equilibrium <span class="math notranslate nohighlight">\(d\Delta E/dt\)</span> = 0, we can write</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta F=-\left(\sum f_{i}  \right)\Delta T 
+\]</div>
+<p>but we already know from <a class="reference internal" href="#equation-eq-stock2">(14)</a> that in equilibrium <span class="math notranslate nohighlight">\(\Delta T = \lambda \Delta F\)</span> and
+the feedbacks sum, so that the climate sensitivity is:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda =-\frac{1}{f} =-\frac{1}{\sum f_{i} }  
+\]</div>
+<p>In words, <a class="reference internal" href="#equation-eq-stock2">(14)</a> is saying that long as the individual feedbacks sum to a negative number
+then there is a positive temperature change <span class="math notranslate nohighlight">\(\Delta T\)</span> large enough to balance a positive
+forcing <span class="math notranslate nohighlight">\(\Delta\)</span>F (and this also works in the opposite direction, such that a negative cooling
+<span class="math notranslate nohighlight">\(\Delta\)</span>F can be offset by a negative temperature change).  However, if the feedbacks sum to a
+positive number, then there is nothing that can hold back <span class="math notranslate nohighlight">\(d\Delta E/dt\)</span> from growing indefinitely
+for positive <span class="math notranslate nohighlight">\(\Delta\)</span>F.  This situation where the net feedback is amplifying is called
+``runaway feedback’’.</p>
+</div>
+<div class="section" id="climate-feedback-factors">
+<h2>Climate Feedback Factors<a class="headerlink" href="#climate-feedback-factors" title="Permalink to this headline">¶</a></h2>
+<p>Now the question becomes how to calculate the climate feedback factors.  The climate feedback
+factor is defined as the change in the top-of-atmosphere (TOA) radiative flux due to a change in the
+Earth’s temperature.  Therefore, we can calculate the climate feedback factor by calculating how
+much the TOA heat flux changes when the temperature changes.  It also makes it simpler to show how
+the various feedback factors are calculated below.</p>
+<p>As the surface temperature changes, various components of the climate (cloud cover, lapse rate,
+water vapour, etc) will also change, producing a change in the radiation at the top of the
+atmosphere we will denote as <span class="math notranslate nohighlight">\(\Delta\)</span>R. Whatever the component, we can then (using the chain rule)
+calculate the feedback factor</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+   \label{21)} 
+f_{x} =\frac{\Delta R}{\Delta T} =\left(\frac{\Delta R}{\Delta climate_{x} } \right)\left(\frac{\Delta climate_{x} }{\Delta T} \right) 
+\end{equation} 
+\]</div>
+<p>Where the subscript x is either clouds, water vapour, sea ice, etc. Some processes are easier to
+characterize than others.  The long-wave radiation emitted by the Earth depends on temperature
+directly, via <span class="math notranslate nohighlight">\(I_{\uparrow } =-\sigma T^{4} \)</span>, so we calculate the Planck feedback factor by
+calculating</p>
+<div class="math notranslate nohighlight" id="equation-eq-planck">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq-planck" title="Permalink to this equation">¶</a></span>\[
+f_{PL} =\frac{\Delta R}{\Delta T} =\frac{dI_{\uparrow } }{dT} =-4 \sigma T^{3}
+\]</div>
+<p>A more realistic calculation requires averaging
+over the whole surface of the Earth.  Doing so results in an estimate of <span class="math notranslate nohighlight">\(f_{PL}\)</span>= -
+3.2 W <span class="math notranslate nohighlight">\(m^{-2}\, K^{-1}\)</span>, which is very similar to the feedback one calculates for <span class="math notranslate nohighlight">\(\epsilon\)</span> = 1
+and T = 240 K (the temperature near the top of the troposphere) using <a class="reference internal" href="#equation-eq-planck">(16)</a>
+i.e <span class="math notranslate nohighlight">\(-4\sigma (240^{3}) =-3.1\; W\, m^{-2} \, K^{-1} \)</span></p>
+<p>The water vapour feedback is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+f_{WV} =\frac{\Delta R_{WV} }{\Delta T} =\left(\frac{\Delta R}{\Delta H_{2} O} \right)\left(\frac{\Delta H_{2} O}{\Delta T} \right) 
+\end{equation} 
+\]</div>
+<p>where the <span class="math notranslate nohighlight">\(H_2 O\)</span> represents the water vapour content of the Earth’s atmosphere.  The ice-albedo feedback is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+f_{A} =\frac{\Delta R_{A} }{\Delta T} =\left(\frac{\Delta R}{\Delta {\rm ice\; area}} \right)\left(\frac{\Delta {\rm ice\; area}}{\Delta T} \right) 
+\end{equation} 
+\]</div>
+<p>where ``ice area’’ is the amount of the Earth’s surface covered in ice.  The lapse rate feedback is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+  \label{25)} 
+f_{LR} =\frac{\Delta R_{LR} }{\Delta T} =\left(\frac{\Delta R}{\Delta LR} \right)\left(\frac{\Delta LR}{\Delta T} \right) 
+\end{equation} 
+\]</div>
+<p>Finally, the cloud feedback is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+  \label{26)} 
+f_{WV} =\frac{\Delta R_{C} }{\Delta T} =\left(\frac{\Delta R}{\Delta {\rm clouds}} \right)\left(\frac{\Delta {\rm clouds}}{\Delta T} \right) 
+\end{equation} 
+\]</div>
+<p>where ``clouds’’ represents changes in the amount, average height, and properties of the clouds in a cloud model and <span class="math notranslate nohighlight">\(\Delta\)</span>R<span class="math notranslate nohighlight">\({}_{c}\)</span> represents the change in radiation at the top of the atmosphere due to the change in clouds calculated using a radiation code like Modtran.</p>
+<div class="figure align-default" id="fig-factors">
+<a class="reference internal image-reference" href="_images/feedback_factors.png"><img alt="_images/feedback_factors.png" src="_images/feedback_factors.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Feedback Magnitudes, not including the Planck feedback. (IPCC AR4 2007)}</span><a class="headerlink" href="#fig-factors" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#fig-factors"><span class="std std-numref">Fig. 1</span></a> shows estimates for WV=water vapour, C = cloud, A=Albedo, LR=lapse
+rate, WV+LR=combined water vapour and lapse rate, and ALL=everything calculated using climate
+models for each of the climate feedback factors, not including the Planck feedback.  Because each
+model makes different approximations in order to simulate atmospheric physics, each model has
+slightly different estimates of the climate feedback strengths.  The water vapour feedback has the
+largest magnitude, with a feedback factor of (1.80 <span class="math notranslate nohighlight">\(\pm\)</span> 0.18) W m<span class="math notranslate nohighlight">\({}^{-2}\)</span> K<span class="math notranslate nohighlight">\({}^{-1}\)</span>.  The cloud
+feedback C is the most uncertain feedback, with a feedback factor of (0.69 <span class="math notranslate nohighlight">\(\pm\)</span> 0.38) W m<span class="math notranslate nohighlight">\({}^{-2}\)</span>
+K<span class="math notranslate nohighlight">\({}^{-1}\)</span>.  Finally, the albedo feedback has a feedback factor of (0.26 <span class="math notranslate nohighlight">\(\pm\)</span> 0.08) W m<span class="math notranslate nohighlight">\({}^{-2}\)</span>
+K<span class="math notranslate nohighlight">\({}^{-1}\)</span>, and the lapse rate feedback has a feedback factor of (-0.84 <span class="math notranslate nohighlight">\(\pm\)</span> 0.26) W m<span class="math notranslate nohighlight">\({}^{-2}\)</span>
+K<span class="math notranslate nohighlight">\({}^{-1}\)</span>.  When the water vapour and lapse rate feedbacks are added together (WV + LR) there is
+cancellation, because models with active convection have both strong negative lapse rate feedback
+(because clouds reduce the temperature contrast between the upper atmosphere and the surface) and
+strong positive water vapour feedback (because clouds move water vapour up to higher altitudes
+where it has a larger greenhouse effect).  The best estimate of the net climate feedback factor
+from these four climate feedbacks (ALL in figure 1) is approximately (1.91 <span class="math notranslate nohighlight">\(\pm\)</span> 0.2) W m<span class="math notranslate nohighlight">\({}^{-2}\)</span>
+K<span class="math notranslate nohighlight">\({}^{-1}\)</span>.  Combining this with the Planck feedback value of -3.2 W m<span class="math notranslate nohighlight">\({}^{-2}\)</span> K<span class="math notranslate nohighlight">\({}^{-1}\)</span> gives a
+total climate feedback of <span class="math notranslate nohighlight">\(f\)</span> = -1.29 <span class="math notranslate nohighlight">\(W\, m^{-2}\,K^{-1}\)</span>, and a climate sensitivity of
+<span class="math notranslate nohighlight">\(\lambda\)</span> = 0.78 <span class="math notranslate nohighlight">\(K/(W\,m^{-2})\)</span>.</p>
+</div>
+<div class="section" id="dessler-s-feedback-notation">
+<h2>Dessler’s feedback notation<a class="headerlink" href="#dessler-s-feedback-notation" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned in the Day 20 slides, Dessler uses a somewhat older feedback notation in Section
+6.3. Specifically, he does the following:</p>
+<ol>
+<li><p>Writes an “initial temperature change” due to the Planck feedback as:</p>
+<div class="math notranslate nohighlight">
+\[
+   \Delta T_i = - \Delta F/f_{PL}
+   \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta F\)</span> = 3.8 <span class="math notranslate nohighlight">\(W\,m^{-2}\)</span> for doubled <span class="math notranslate nohighlight">\(CO_2\)</span>.  Using <span class="math notranslate nohighlight">\(f_{PL}=-3.2\ W\,m^{-2}\,K^{-1}\)</span>
+gives <span class="math notranslate nohighlight">\(\Delta T_i\)</span> = 3.8/3.2 = <span class="math notranslate nohighlight">\(2.1\ K\)</span></p>
+</li>
+<li><p>Divides each of the feedbacks by the magnitude of the Planck feedback to get the “gain”.  For
+example his water vapor gain of <span class="math notranslate nohighlight">\(g_{WV}\)</span> = 0.6 is <span class="math notranslate nohighlight">\(f_{WV}/|f_{PL}|\)</span> = <span class="math notranslate nohighlight">\(f_{WV}/3.2\)</span>, so <span class="math notranslate nohighlight">\(f_{WV}\)</span> =
+0.6 <span class="math notranslate nohighlight">\(\times\)</span> 3.2 = 1.9 <span class="math notranslate nohighlight">\(W\,m^{-2}\,K^{-1}\)</span></p></li>
+</ol>
+<p>With these two substitutions we’ve can get the Dessler form of the equilibrium climate sensitivity
+from <a class="reference internal" href="#equation-eq-stock2">(14)</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{d\Delta E}{dt}=&amp; 0 =\Delta F+f_{PL} \Delta T+f_{WV} \Delta T+f_{A} \Delta T+f_{LR} \Delta T+f_{C} \Delta T  \\
+-\Delta F &amp;= (f_{PL} +f_{WV} +f_{A} +f_{LR}+f_{C} ) \Delta T  \\
+-\frac{\Delta F}{|f_{PL}|} &amp; = \frac{(f_{PL} +f_{WV} +f_{A} +f_{LR}+f_{C} )}{|f_{PL}|}\Delta T \\
+&amp; \text{and since $f_{PL}$ is negative}: \\
+- \Delta T_i &amp; =  (-1 + (g_{WV} +g_{A} + g_{LR} + g_{c})) \Delta T \\
+&amp; \text{or rearranging} \\
+\Delta T &amp; = \frac{\Delta T_i}{(1 - (g_{WV} +g_{A} + g_{LR} + g_{c}))} \\
+&amp; \text{which is Dessler equation 6.4}
+\end{align}
+\end{split}\]</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Climate feedbacks are processes that depend on the temperature of the Earth and alter the
+radiative balance of the Earth.</p></li>
+<li><p>Feedbacks can either amplify (positive <span class="math notranslate nohighlight">\(f\)</span>) or stabilize (negative <span class="math notranslate nohighlight">\(f\)</span>) an initial perturbation</p></li>
+<li><p>The five major fast climate feedbacks are the Planck radiation, water vapour,
+atmospheric lapse rate, ice-albedo and cloud feedbacks</p></li>
+<li><p>The  Planck feedback occurs when a temperature change alters the outgoing long-wave
+radiation emitted from the top of the atmosphere.  This is a stabilising feedback.</p></li>
+<li><p>Water vapour feedback occurs when a temperature change alters the atmospheric water vapour
+content, altering the strength of the greenhouse effect.  This is an amplifying feedback.</p></li>
+<li><p>Lapse rate feedback occurs when a temperature change alters the vertical temperature profile,
+changing the strength of the greenhouse effect.  This is a stabilising feedback.</p></li>
+<li><p>Ice-albedo feedback occurs when a temperature change alters the amount of ice on Earth, changing the Earth’s albedo.  This is an amplifying feedback.</p></li>
+<li><p>Cloud feedback occurs when a temperature change alters the average amount of cloud cover,
+changing the amount of long wave trapped and short wave reflected by the clouds. This is an
+amplifying feedback.</p></li>
+<li><p>The strength of climate feedbacks determine the size of the climate sensitivity.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda =-\frac{1}{\sum f_{i} }\)</span></p></li>
+<li><p>The strength of the climate feedbacks can be determined by calculating how much the climate
+changes when the feedback system changes and multiplying that by how much the heat flux at the
+top of the atmosphere changes when the feedback system changes.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_{x} =\frac{\Delta R}{\Delta T} =\left(\frac{\Delta R}{\Delta climate_{x} } \right)\left(\frac{\Delta climate_{x} }{\Delta T} \right)\)</span></p></li>
+<li><p>The water vapour feedback is the strongest climate feedback, and the cloud feedback is the most uncertain.</p></li>
+<li><p>If the net climate feedback factor ever goes above 0, the climate would enter into {runaway
+feedback}, in which temperature increases would increase the amount of heat flux into the
+climate, and the climate would change radically.  Luckily, the amount of <span class="math notranslate nohighlight">\(CO_2\)</span> required
+for this to happen on Earth is greater than the available fossil fuel reservoir.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="climate_forcing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Day 19: Climate timescales for forcing without feedback</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By UBC<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

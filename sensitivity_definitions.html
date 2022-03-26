@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Climate sensitivity definitions &#8212; EOSC 340: Global Climate Change</title>
+    <title>Day 15: Climate sensitivity definitions &#8212; EOSC 340: Global Climate Change</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="EOSC 340 notes" href="index.html" />
+    <link rel="next" title="Day 19: Climate timescales for forcing without feedback" href="climate_forcing.html" />
+    <link rel="prev" title="E340 Course Notes" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,19 +88,29 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
-   EOSC 340 notes
+   E340 Course Notes
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Course notes
+  Sensitivity and feedback
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Climate sensitivity definitions
+   Day 15: Climate sensitivity definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="climate_forcing.html">
+   Day 19: Climate timescales for forcing without feedback
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multiple_feedbacks.html">
+   Day 20: Stock and flow with multiple feedbacks
   </a>
  </li>
 </ul>
@@ -141,12 +152,9 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="_sources/feedback_notes.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/feedback_notes.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/sensitivity_definitions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -165,29 +173,6 @@ const thebe_selector_output = ".output, .cell_output"
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/phaustin/eosc340/master?urlpath=tree/feedback_notes.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://eosc211.jupyterhub.eoas.ubc.ca/jupyter/hub/user-redirect/git-pull?repo=https://github.com/phaustin/eosc340&urlpath=tree/eosc340/feedback_notes.md&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
-    </div>
-</div>
 
         </div>
 
@@ -238,7 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Climate sensitivity definitions</h1>
+                <h1>Day 15: Climate sensitivity definitions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -286,8 +271,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="climate-sensitivity-definitions">
-<h1>Climate sensitivity definitions<a class="headerlink" href="#climate-sensitivity-definitions" title="Permalink to this headline">¶</a></h1>
+  <hr class="docutils" />
+<div class="tex2jax_ignore mathjax_ignore section" id="day-15-climate-sensitivity-definitions">
+<h1>Day 15: Climate sensitivity definitions<a class="headerlink" href="#day-15-climate-sensitivity-definitions" title="Permalink to this headline">¶</a></h1>
 <p>A short note that defines terms used in our discussions of climate sensitivity and feedback</p>
 <div class="section" id="definitions">
 <h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
@@ -328,7 +314,7 @@ extra amount of upward radiative flux <span class="math notranslate nohighlight"
 <span class="eqno">(3)<a class="headerlink" href="#equation-eq-planck" title="Permalink to this equation">¶</a></span>\[
 f_{planck} = -5.67\ W\,m^{-2}\,K^{-1}
 \]</div>
-<p>Using <a class="reference internal" href="#equation-eq-delr">(2)</a> and <a class="reference internal" href="#equation-eq-planck">(3)</a>, we can rewrite <a class="reference internal" href="#equation-eq-stock">(1)</a> as:</p>
+<p>Using <a class="reference internal" href="#equation-eq-delr">(2)</a> and <a class="reference internal" href="multiple_feedbacks.html#equation-eq-planck">(16)</a>, we can rewrite <a class="reference internal" href="#equation-eq-stock">(1)</a> as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-stock2">
 <span class="eqno">(4)<a class="headerlink" href="#equation-eq-stock2" title="Permalink to this equation">¶</a></span>\[
 \frac{d\Delta E}{dt} =\Delta F + f_{planck} \Delta T
@@ -337,7 +323,7 @@ f_{planck} = -5.67\ W\,m^{-2}\,K^{-1}
 </div>
 <div class="section" id="linking-the-climate-feedback-to-the-climate-sensitivity">
 <h2>Linking  the climate feedback to the climate sensitivity<a class="headerlink" href="#linking-the-climate-feedback-to-the-climate-sensitivity" title="Permalink to this headline">¶</a></h2>
-<p>In equilibrium:  <span class="math notranslate nohighlight">\(d \Delta E/dt = 0\)</span>, so <a class="reference internal" href="#equation-eq-stock2">(4)</a> becomes:</p>
+<p>In equilibrium:  <span class="math notranslate nohighlight">\(d \Delta E/dt = 0\)</span>, so <a class="reference internal" href="multiple_feedbacks.html#equation-eq-stock2">(14)</a> becomes:</p>
 <div class="math notranslate nohighlight" id="equation-eq-stock3">
 <span class="eqno">(5)<a class="headerlink" href="#equation-eq-stock3" title="Permalink to this equation">¶</a></span>\[
 \Delta F + f_{planck} \Delta T = 0
@@ -403,8 +389,15 @@ the topic of Chapter 6 in the textbook.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">EOSC 340 notes</p>
+            <p class="prev-next-title">E340 Course Notes</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="climate_forcing.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Day 19: Climate timescales for forcing without feedback</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
