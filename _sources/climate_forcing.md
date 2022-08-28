@@ -26,7 +26,7 @@ $$
 
 to relate the $CO_2$ concentration to the radiative forcing.  
 
-* On [Day 15](https://canvas.ubc.ca/courses/84061/modules/564569) and in the [climate sensitivity definitions](https://phaustin.github.io/eosc340/feedback_notes.html) we linked a forcing $\Delta F$ from $CO_2$ or orbital changes to the long-term equilibrum temperature change $\Delta T$:
+* On [Day 15](https://canvas.ubc.ca/courses/84061/modules/564569) and in the [climate sensitivity definitions](https://phaustin.github.io/eosc340/sensitivity_definitions.html) we linked a forcing $\Delta F$ from $CO_2$ or orbital changes to the long-term equilibrum temperature change $\Delta T$:
 
 $$
 \Delta T = \lambda \Delta F
