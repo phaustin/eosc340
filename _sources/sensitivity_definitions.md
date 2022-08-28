@@ -1,5 +1,3 @@
----
-
 # Day 15: Climate sensitivity definitions
 
 A short note that defines terms used in our discussions of climate sensitivity and feedback

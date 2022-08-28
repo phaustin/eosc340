@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 20: Stock and flow with multiple feedbacks &#8212; EOSC 340: Global Climate Change</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,30 +19,30 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -60,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -84,14 +100,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
-   E340 Course Notes
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    E340 Course Notes
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Sensitivity and feedback
  </span>
@@ -115,12 +132,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -128,61 +150,117 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/multiple_feedbacks.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/multiple_feedbacks.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#major-climate-feedbacks">
    Major Climate feedbacks
@@ -232,12 +310,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Day 20: Stock and flow with multiple feedbacks</h1>
@@ -303,16 +380,17 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="day-20-stock-and-flow-with-multiple-feedbacks">
-<h1>Day 20: Stock and flow with multiple feedbacks<a class="headerlink" href="#day-20-stock-and-flow-with-multiple-feedbacks" title="Permalink to this headline">¶</a></h1>
+<h1>Day 20: Stock and flow with multiple feedbacks<a class="headerlink" href="#day-20-stock-and-flow-with-multiple-feedbacks" title="Permalink to this headline">#</a></h1>
 <p><strong>To review</strong>: <strong>Climate feedbacks</strong> are changes to the net radiative flux into and out of the <em>top
 of the Earth’s atmosphere</em> in response to changes in the Earth’s temperature. They can be included
 in the earth’s energy budget equation in this form:</p>
 <div class="math notranslate nohighlight" id="equation-eq-stock1">
-<span class="eqno">(13)<a class="headerlink" href="#equation-eq-stock1" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq-stock1" title="Permalink to this equation">#</a></span>\[
 \frac{d\Delta E}{dt} =\Delta F+\Delta R=\Delta F+f\Delta T 
 \]</div>
 <p>Here, <span class="math notranslate nohighlight">\(\Delta E\)</span> is the change in the column energy from a reference equilibrium value, the climate
@@ -328,12 +406,12 @@ drive the Earth to a completely new equilibrium.  However, the total climate fee
 characterizes several different feedback processes, some of which are amplifying, and some of which
 are stabilizing.</p>
 <div class="section" id="major-climate-feedbacks">
-<h2>Major Climate feedbacks<a class="headerlink" href="#major-climate-feedbacks" title="Permalink to this headline">¶</a></h2>
+<h2>Major Climate feedbacks<a class="headerlink" href="#major-climate-feedbacks" title="Permalink to this headline">#</a></h2>
 <p>In addition to the Planck feedback, there are many feedbacks that operate in the Earth’s climate
 system, on many different time scales.  However, over the time scale of a human lifetime (<span class="math notranslate nohighlight">\(\sim\)</span>80
 years) there are five main feedback processes that affect the climate.</p>
 <div class="section" id="water-vapor">
-<h3>Water Vapor<a class="headerlink" href="#water-vapor" title="Permalink to this headline">¶</a></h3>
+<h3>Water Vapor<a class="headerlink" href="#water-vapor" title="Permalink to this headline">#</a></h3>
 <p>Water vapour feedback arises because liquid water emits more vapor as it warms.  As the
 temperature of the climate system increases, the maximum amount of water the atmosphere can hold
 also increases.  Since most of the Earth surface is covered in ocean, this warming results in more
@@ -344,7 +422,7 @@ water vapour feedback an amplifying feedback process.  It is positive because it
 the negative (upward) outgoing longwave radiation (OLW).</p>
 </div>
 <div class="section" id="lapse-rate">
-<h3>Lapse rate<a class="headerlink" href="#lapse-rate" title="Permalink to this headline">¶</a></h3>
+<h3>Lapse rate<a class="headerlink" href="#lapse-rate" title="Permalink to this headline">#</a></h3>
 <p>The strength of the greenhouse effect does not only depend on the amount of greenhouse gas in the
 atmosphere, but also on the atmospheric lapse rate=dT/dz.  If the lapse rate were zero, so that the
 top of the atmosphere were the same temperature as the bottom of the atmosphere, the top of the
@@ -361,7 +439,7 @@ the top of the atmosphere.  This makes the lapse rate feedback a stabilising fee
 negative because it increases OLW.</p>
 </div>
 <div class="section" id="ice-albedo">
-<h3>Ice-albedo<a class="headerlink" href="#ice-albedo" title="Permalink to this headline">¶</a></h3>
+<h3>Ice-albedo<a class="headerlink" href="#ice-albedo" title="Permalink to this headline">#</a></h3>
 <p>Ice and snow generally reflect short-wave radiation much better than rock, dirt, or water.  Snow has
 an albedo of about <span class="math notranslate nohighlight">\(\alpha\)</span> = 0.8-0.9 and ice has a slightly lower albedo between <span class="math notranslate nohighlight">\(\alpha\)</span> =
 0.5-0.7, while the ocean’s albedo is around <span class="math notranslate nohighlight">\(\alpha\)</span> = 0.06 and land is between <span class="math notranslate nohighlight">\(\alpha\)</span> = 0.1-0.3.
@@ -372,7 +450,7 @@ is an amplifying feedback process. It has a positive sign because it increases t
 downward shortwave.</p>
 </div>
 <div class="section" id="clouds">
-<h3>Clouds<a class="headerlink" href="#clouds" title="Permalink to this headline">¶</a></h3>
+<h3>Clouds<a class="headerlink" href="#clouds" title="Permalink to this headline">#</a></h3>
 <p>The cloud feedback effect depends on several processes.  As we discussed in the Day 9 notes, low
 clouds tend to reflect more short-wave radiation, cooling the Earth, while high clouds allow short
 wave through but trap outgoing long-wave radiation, warming the Earth.  As the temperature of the
@@ -389,13 +467,13 @@ feedback process.</p>
 </div>
 </div>
 <div class="section" id="climate-sensitivity-and-feedbacks">
-<h2>Climate Sensitivity and Feedbacks<a class="headerlink" href="#climate-sensitivity-and-feedbacks" title="Permalink to this headline">¶</a></h2>
+<h2>Climate Sensitivity and Feedbacks<a class="headerlink" href="#climate-sensitivity-and-feedbacks" title="Permalink to this headline">#</a></h2>
 <p>Given this list, how can we learn more about each of these feedbacks, and how they contribute
 to the total feedback <span class="math notranslate nohighlight">\(f\)</span> and the climate sensitivity
 <span class="math notranslate nohighlight">\(\lambda = -1/f\)</span>?</p>
 <p>Repeating equation <a class="reference internal" href="#equation-eq-stock1">(13)</a></p>
 <div class="math notranslate nohighlight" id="equation-eq-stock2">
-<span class="eqno">(14)<a class="headerlink" href="#equation-eq-stock2" title="Permalink to this equation">¶</a></span>\[ 
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-stock2" title="Permalink to this equation">#</a></span>\[ 
 \frac{d\Delta E}{dt} =\Delta F+f\Delta T
 \]</div>
 <p>Where again, <span class="math notranslate nohighlight">\(E\)</span> is the energy stored in the climate system in <span class="math notranslate nohighlight">\(J\,m^{-2}\)</span>, <span class="math notranslate nohighlight">\(\Delta F\)</span> is
@@ -415,7 +493,7 @@ feedback, <span class="math notranslate nohighlight">\(f_{LR}\)</span> is that d
 simplicity, we can factor the temperature change <span class="math notranslate nohighlight">\(\Delta T\)</span> out of each feedback term and
 write</p>
 <div class="math notranslate nohighlight" id="equation-eq-stock3">
-<span class="eqno">(15)<a class="headerlink" href="#equation-eq-stock3" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq-stock3" title="Permalink to this equation">#</a></span>\[
 \frac{d\Delta E}{dt} =\Delta F+\left(\sum f_{i}  \right)\Delta T 
 \]</div>
 <p>Since at equilibrium <span class="math notranslate nohighlight">\(d\Delta E/dt\)</span> = 0, we can write</p>
@@ -423,13 +501,13 @@ write</p>
 \[
 \Delta F=-\left(\sum f_{i}  \right)\Delta T 
 \]</div>
-<p>but we already know from <a class="reference internal" href="#equation-eq-stock2">(14)</a> that in equilibrium <span class="math notranslate nohighlight">\(\Delta T = \lambda \Delta F\)</span> and
+<p>but we already know from <a class="reference internal" href="sensitivity_definitions.html#equation-eq-stock2">(4)</a> that in equilibrium <span class="math notranslate nohighlight">\(\Delta T = \lambda \Delta F\)</span> and
 the feedbacks sum, so that the climate sensitivity is:</p>
 <div class="math notranslate nohighlight">
 \[
 \lambda =-\frac{1}{f} =-\frac{1}{\sum f_{i} }  
 \]</div>
-<p>In words, <a class="reference internal" href="#equation-eq-stock2">(14)</a> is saying that long as the individual feedbacks sum to a negative number
+<p>In words, <a class="reference internal" href="sensitivity_definitions.html#equation-eq-stock2">(4)</a> is saying that long as the individual feedbacks sum to a negative number
 then there is a positive temperature change <span class="math notranslate nohighlight">\(\Delta T\)</span> large enough to balance a positive
 forcing <span class="math notranslate nohighlight">\(\Delta\)</span>F (and this also works in the opposite direction, such that a negative cooling
 <span class="math notranslate nohighlight">\(\Delta\)</span>F can be offset by a negative temperature change).  However, if the feedbacks sum to a
@@ -438,7 +516,7 @@ for positive <span class="math notranslate nohighlight">\(\Delta\)</span>F.  Thi
 ``runaway feedback’’.</p>
 </div>
 <div class="section" id="climate-feedback-factors">
-<h2>Climate Feedback Factors<a class="headerlink" href="#climate-feedback-factors" title="Permalink to this headline">¶</a></h2>
+<h2>Climate Feedback Factors<a class="headerlink" href="#climate-feedback-factors" title="Permalink to this headline">#</a></h2>
 <p>Now the question becomes how to calculate the climate feedback factors.  The climate feedback
 factor is defined as the change in the top-of-atmosphere (TOA) radiative flux due to a change in the
 Earth’s temperature.  Therefore, we can calculate the climate feedback factor by calculating how
@@ -460,13 +538,13 @@ characterize than others.  The long-wave radiation emitted by the Earth depends 
 directly, via <span class="math notranslate nohighlight">\(I_{\uparrow } =-\sigma T^{4} \)</span>, so we calculate the Planck feedback factor by
 calculating</p>
 <div class="math notranslate nohighlight" id="equation-eq-planck">
-<span class="eqno">(16)<a class="headerlink" href="#equation-eq-planck" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq-planck" title="Permalink to this equation">#</a></span>\[
 f_{PL} =\frac{\Delta R}{\Delta T} =\frac{dI_{\uparrow } }{dT} =-4 \sigma T^{3}
 \]</div>
 <p>A more realistic calculation requires averaging
 over the whole surface of the Earth.  Doing so results in an estimate of <span class="math notranslate nohighlight">\(f_{PL}\)</span>= -
 3.2 W <span class="math notranslate nohighlight">\(m^{-2}\, K^{-1}\)</span>, which is very similar to the feedback one calculates for <span class="math notranslate nohighlight">\(\epsilon\)</span> = 1
-and T = 240 K (the temperature near the top of the troposphere) using <a class="reference internal" href="#equation-eq-planck">(16)</a>
+and T = 240 K (the temperature near the top of the troposphere) using <a class="reference internal" href="sensitivity_definitions.html#equation-eq-planck">(3)</a>
 i.e <span class="math notranslate nohighlight">\(-4\sigma (240^{3}) =-3.1\; W\, m^{-2} \, K^{-1} \)</span></p>
 <p>The water vapour feedback is given by</p>
 <div class="math notranslate nohighlight">
@@ -501,7 +579,7 @@ f_{WV} =\frac{\Delta R_{C} }{\Delta T} =\left(\frac{\Delta R}{\Delta {\rm clouds
 <p>where ``clouds’’ represents changes in the amount, average height, and properties of the clouds in a cloud model and <span class="math notranslate nohighlight">\(\Delta\)</span>R<span class="math notranslate nohighlight">\({}_{c}\)</span> represents the change in radiation at the top of the atmosphere due to the change in clouds calculated using a radiation code like Modtran.</p>
 <div class="figure align-default" id="fig-factors">
 <a class="reference internal image-reference" href="_images/feedback_factors.png"><img alt="_images/feedback_factors.png" src="_images/feedback_factors.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Feedback Magnitudes, not including the Planck feedback. (IPCC AR4 2007)}</span><a class="headerlink" href="#fig-factors" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Feedback Magnitudes, not including the Planck feedback. (IPCC AR4 2007)}</span><a class="headerlink" href="#fig-factors" title="Permalink to this image">#</a></p>
 </div>
 <p><a class="reference internal" href="#fig-factors"><span class="std std-numref">Fig. 1</span></a> shows estimates for WV=water vapour, C = cloud, A=Albedo, LR=lapse
 rate, WV+LR=combined water vapour and lapse rate, and ALL=everything calculated using climate
@@ -523,7 +601,7 @@ total climate feedback of <span class="math notranslate nohighlight">\(f\)</span
 <span class="math notranslate nohighlight">\(\lambda\)</span> = 0.78 <span class="math notranslate nohighlight">\(K/(W\,m^{-2})\)</span>.</p>
 </div>
 <div class="section" id="dessler-s-feedback-notation">
-<h2>Dessler’s feedback notation<a class="headerlink" href="#dessler-s-feedback-notation" title="Permalink to this headline">¶</a></h2>
+<h2>Dessler’s feedback notation<a class="headerlink" href="#dessler-s-feedback-notation" title="Permalink to this headline">#</a></h2>
 <p>As mentioned in the Day 20 slides, Dessler uses a somewhat older feedback notation in Section
 6.3. Specifically, he does the following:</p>
 <ol>
@@ -540,7 +618,7 @@ example his water vapor gain of <span class="math notranslate nohighlight">\(g_{
 0.6 <span class="math notranslate nohighlight">\(\times\)</span> 3.2 = 1.9 <span class="math notranslate nohighlight">\(W\,m^{-2}\,K^{-1}\)</span></p></li>
 </ol>
 <p>With these two substitutions we’ve can get the Dessler form of the equilibrium climate sensitivity
-from <a class="reference internal" href="#equation-eq-stock2">(14)</a>:</p>
+from <a class="reference internal" href="sensitivity_definitions.html#equation-eq-stock2">(4)</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
@@ -556,7 +634,7 @@ from <a class="reference internal" href="#equation-eq-stock2">(14)</a>:</p>
 \end{split}\]</div>
 </div>
 <div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Climate feedbacks are processes that depend on the temperature of the Earth and alter the
 radiative balance of the Earth.</p></li>
@@ -610,9 +688,11 @@ for this to happen on Earth is greater than the available fossil fuel reservoir.
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="climate_forcing.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -621,24 +701,28 @@ for this to happen on Earth is greater than the available fossil fuel reservoir.
         </div>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By UBC<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
     
-      By UBC<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
