@@ -16,7 +16,7 @@ a change in the TOA radiative flux that occurs as a result of a change in the Ea
 The **climate feedback factor** $f$ has units of $W\,m^{-2}\,K^{-1}$ and is the negative inverse of
 the climate sensitivity (i.e. $f=-1/\lambda$).  If $f$ is positive, then the climate feedback is
 amplifying, and if f is negative then the climate feedback is stabilizing. For the climate to be
-stable, $f$ must be negative; otherwise, a rise/drop intemperature would feed back into a positivit/negative growth rate for and
+stable, $f$ must be negative; otherwise, a rise/drop in temperature would feed back into a positive/negative growth rate for and
 drive the Earth to a completely new equilibrium.  However, the total climate feedback factor $f$
 characterizes several different feedback processes, some of which are amplifying, and some of which
 are stabilizing.
@@ -90,7 +90,7 @@ feedback process.
 ## Climate Sensitivity and Feedbacks
 
 Given this list, how can we learn more about each of these feedbacks, and how they contribute
-to the total feedback $f$ and the climate sensiivity
+to the total feedback $f$ and the climate sensitivity
 $\lambda = -1/f$?
 
 Repeating equation {eq}`eq:stock1`
@@ -104,15 +104,15 @@ the climate forcing in $W\,m^{-2}$, $\Delta T$ is the average temperature change
 climate (usually, but not always, taken to be the surface temperature), and $f$ is the
 climate feedback factor in $W\, m^{-2} K^{-1}$.
 
-Fortunately, to a good approximation the total feedback can be split into feedback factor into 
+Fortunately, to a good approximation the total feedback can be split into 
 individual components:
  
  $$
-\frac{d\Delta E}{dt} =\Delta F+f_{pl} \Delta T+f_{wv} \Delta T+f_{ia} \Delta T+f_{lr} \Delta T+f_{C} \Delta T 
+\frac{d\Delta E}{dt} =\Delta F+f_{PL} \Delta T+f_{WV} \Delta T+f_{A} \Delta T+f_{LR} \Delta T+f_{C} \Delta T 
 $$
 
-Here, $f_{pl}$ is the feedback factor due to the Planck long-wave radiation feedback, $f_{wv}$ ik
-that due to the water vapour feedback, $f_{ia}$ is that due to the ice-albedo
+Here, $f_{PL}$ is the feedback factor due to the Planck long-wave radiation feedback, $f_{WV}$ ik
+that due to the water vapour feedback, $f_{A}$ is that due to the ice-albedo
 feedback, $f_{LR}$ is that due to the lapse rate feedback, and
 $f_{c}$ is that due to the cloud feedback (all in $W\,m^{-2}\,K^{-1}$).  For
 simplicity, we can factor the temperature change $\Delta T$ out of each feedback term and
@@ -122,29 +122,26 @@ $$
 \frac{d\Delta E}{dt} =\Delta F+\left(\sum f_{i}  \right)\Delta T 
 $$ (eq:stock3)
 
-Here $\Sigma f_{i}$ has replaced the {f }in equation \eqref{ZEqnNum704639}, so the net
-climate feedback factor (f) is just the sum of each individual climate feedback factor.
-
 Since at equilibrium $d\Delta E/dt$ = 0, we can write
 
 $$
 \Delta F=-\left(\sum f_{i}  \right)\Delta T 
 $$
 
-but we already know from {eq}`eq:stock2` that in equilibrium $\Delta T = \lambda \Delta F$ and so
-the climate sensitivity can be calculated according to
+but we already know from {eq}`eq:stock2` that in equilibrium $\Delta T = \lambda \Delta F$ and 
+the feedbacks sum, so that the climate sensitivity is:
 
 $$
 \lambda =-\frac{1}{f} =-\frac{1}{\sum f_{i} }  
 $$
 
-What is {eq}`eq:stock3` saying, in words?  As long as the individual feedbacks sum up to a negative
-number, then {eq}`eq:stock3` says that there can be a positive temperature change
-$\Delta$T that would counteract a positive forcing $\Delta$F (and this also works in the opposite
-direction, such that a negative cooling $\Delta$F can be offset by a negative temperature change.
-If the feedbacks sum to a positive number, then there is nothing that can hold back dE/dt from
-growing indefinitely for positive $\Delta$F.  This situation where the net amplifying feedback is
-amplifying is called ``runaway feedback''.
+In words, {eq}`eq:stock2` is saying that long as the individual feedbacks sum to a negative number
+then there is a positive temperature change $\Delta T$ large enough to balance a positive
+forcing $\Delta$F (and this also works in the opposite direction, such that a negative cooling
+$\Delta$F can be offset by a negative temperature change).  However, if the feedbacks sum to a
+positive number, then there is nothing that can hold back $d\Delta E/dt$ from growing indefinitely
+for positive $\Delta$F.  This situation where the net feedback is amplifying is called
+``runaway feedback''.
 
 
 ## Climate Feedback Factors
@@ -170,19 +167,18 @@ $$
 
 Where the subscript x is either clouds, water vapour, sea ice, etc. Some processes are easier to
 characterize than others.  The long-wave radiation emitted by the Earth depends on temperature
-directly, via $I_{\uparrow } =-{\rm }\sigma T^{4} $, so we calculate the Planck feedback factor by
+directly, via $I_{\uparrow } =-\sigma T^{4} $, so we calculate the Planck feedback factor by
 calculating
 
 $$
-f_{pl} =\frac{\Delta R}{\Delta T} =\frac{dI_{\uparrow } }{dT} =-{\rm }\sigma 4T^{3}
-$$
+f_{PL} =\frac{\Delta R}{\Delta T} =\frac{dI_{\uparrow } }{dT} =-4 \sigma T^{3}
+$$ (eq:planck)
 
-(note the assumption that $\epsilon$ isn't changing -- we're tracking the emissivity changes in
-other feedbacks like H${}_{2}$O. The true calculation is complicated by having to average these
-values over the whole surface of the Earth.  However, doing so results in an estimate of $f_{PL}$= -
-3.2 W $m^{-2}\, K^{-1}$, which is very similar to the feedback one calculates for $\varepsilon$ = 1
-and T = 240 K (the temperature near the top of the troposphere) using Equation
-\eqref{ZEqnNum227245}, i.e $-4\sigma 240^{3} =-3.1\; W\, m^{-2} \, K^{-1} $
+A more realistic calculation requires averaging 
+over the whole surface of the Earth.  Doing so results in an estimate of $f_{PL}$= -
+3.2 W $m^{-2}\, K^{-1}$, which is very similar to the feedback one calculates for $\epsilon$ = 1
+and T = 240 K (the temperature near the top of the troposphere) using {eq}`eq:planck`
+i.e $-4\sigma (240^{3}) =-3.1\; W\, m^{-2} \, K^{-1} $
 
  The water vapour feedback is given by
  
@@ -191,7 +187,7 @@ $$
 f_{WV} =\frac{\Delta R_{WV} }{\Delta T} =\left(\frac{\Delta R}{\Delta H_{2} O} \right)\left(\frac{\Delta H_{2} O}{\Delta T} \right) 
 \end{equation} 
 $$
-where the {H}${}_{2}${O }represents the water vapour content of the Earth's atmosphere.  The ice-albedo feedback is given by
+where the $H_2 O$ represents the water vapour content of the Earth's atmosphere.  The ice-albedo feedback is given by
 
 $$
 \begin{equation}
@@ -203,7 +199,7 @@ where ``ice area'' is the amount of the Earth's surface covered in ice.  The lap
 $$
 \begin{equation}
   \label{25)} 
-f_{WV} =\frac{\Delta R_{LR} }{\Delta T} =\left(\frac{\Delta R}{\Delta LR} \right)\left(\frac{\Delta LR}{\Delta T} \right) 
+f_{LR} =\frac{\Delta R_{LR} }{\Delta T} =\left(\frac{\Delta R}{\Delta LR} \right)\left(\frac{\Delta LR}{\Delta T} \right) 
 \end{equation} 
 $$
 Finally, the cloud feedback is given by
@@ -240,56 +236,82 @@ strong positive water vapour feedback (because clouds move water vapour up to hi
 where it has a larger greenhouse effect).  The best estimate of the net climate feedback factor
 from these four climate feedbacks (ALL in figure 1) is approximately (1.91 $\pm$ 0.2) W m${}^{-2}$
 K${}^{-1}$.  Combining this with the Planck feedback value of -3.2 W m${}^{-2}$ K${}^{-1}$ gives a
-total climate feedback of {c} = -1.29 W m${}^{-2}$ K${}^{-1}$, and a climate sensitivity of
-$\lambda$ = 0.78 K (W m${}^{-2}$)${}^{-1}$.
+total climate feedback of $f$ = -1.29 $W\, m^{-2}\,K^{-1}$, and a climate sensitivity of
+$\lambda$ = 0.78 $K/(W\,m^{-2})$.
 
-Note that the standard deviation in the total feedback value (0.2 W m${}^{-2}$ K${}^{-1}$) is
-{lower} than the cloud feedback uncertainty (0.38 W m${}^{-2}$ K${}^{-1}$) or the lapse rate
-feedback uncertainty (0.26 W m${}^{-2}$ K${}^{-1}$).  This is because we can measure the
-{net} climate feedback using paleoclimate data much better than we understand each
-individual feedback process.  Each model is designed so its net climate feedback matches our
-observations of climate feedback, but each does so in a different way, so that models with a strong
-cloud feedback may have a weaker water vapour feedback or a stronger lapse rate feedback.  This is
-a serious problem which limits the usefulness of {{regional}} climate model
-predictions, since the climate change in any given region experiences will depend on the details of
-how the feedbacks adjust the cloud cover, water vapour, lapse rate, and surface albedo.  In other
-words, we are confident the Earth is warming, but we are unsure exactly how this warming will
-change the climate.
+## Dessler's feedback notation
 
+As mentioned in the Day 20 slides, Dessler uses a somewhat older feedback notation in Section
+6.3. Specifically, he does the following:
 
+1) Writes an "initial temperature change" due to the Planck feedback as:
 
- 
+   $$
+   \Delta T_i = - \Delta F/f_{PL}
+   $$
+   where $\Delta F$ = 3.8 $W\,m^{-2}$ for doubled $CO_2$.  Using $f_{PL}=-3.2\ W\,m^{-2}\,K^{-1}$ 
+   gives $\Delta T_i$ = 3.8/3.2 = $2.1\ K$
+  
+2) Divides each of the feedbacks by the magnitude of the Planck feedback to get the "gain".  For
+   example his water vapor gain of $g_{WV}$ = 0.6 is $f_{WV}/|f_{PL}|$ = $f_{WV}/3.2$, so $f_{WV}$ =
+   0.6 $\times$ 3.2 = 1.9 $W\,m^{-2}\,K^{-1}$
+   
+With these two substitutions we've can get the Dessler form of the equilibrium climate sensitivity
+from {eq}`eq:stock2`:
+
+$$
+\begin{align}
+\frac{d\Delta E}{dt}=& 0 =\Delta F+f_{PL} \Delta T+f_{WV} \Delta T+f_{A} \Delta T+f_{LR} \Delta T+f_{C} \Delta T  \\
+-\Delta F &= (f_{PL} +f_{WV} +f_{A} +f_{LR}+f_{C} ) \Delta T  \\
+-\frac{\Delta F}{|f_{PL}|} & = \frac{(f_{PL} +f_{WV} +f_{A} +f_{LR}+f_{C} )}{|f_{PL}|}\Delta T \\
+& \text{and since $f_{PL}$ is negative}: \\
+- \Delta T_i & =  (-1 + (g_{WV} +g_{A} + g_{LR} + g_{c})) \Delta T \\
+& \text{or rearranging} \\
+\Delta T & = \frac{\Delta T_i}{(1 - (g_{WV} +g_{A} + g_{LR} + g_{c}))} \\
+& \text{which is Dessler equation 6.4}
+\end{align}
+$$
 
 ## Summary
 
-* Climate Feedbacks are processes that depend on the temperature of the Earth and alter the radiative balance of the Earth.
+* Climate feedbacks are processes that depend on the temperature of the Earth and alter the
+  radiative balance of the Earth.
 
-*  an {amplifying feedback} system responds to a disturbance by increasing the initial disturbance, destabilising the system.  A {stabilising feedback} system responds to a disturbance by decreasing the initial disturbance, stabilising the system.  amplifying and stabilising feedbacks are not good or bad; ``amplifying'' and ``negative'' refer to whether the feedback has the same or the opposite sign as the forcing that disturbs the system.
+* Feedbacks can either amplify (positive $f$) or stabilize (negative $f$) an initial perturbation
 
-*  The five major short term climate feedbacks come from blackbody radiation, water vapour, the atmospheric lapse rate, the ice-albedo feedback, and clouds.
+* The five major fast climate feedbacks are the Planck radiation, water vapour, 
+  atmospheric lapse rate, ice-albedo and cloud feedbacks
 
-*  Black body or Planck feedback occurs when a temperature change alters the outgoing long-wave radiation emitted from the top of the atmosphere.  This is a stabilising feedback.
+* The  Planck feedback occurs when a temperature change alters the outgoing long-wave
+  radiation emitted from the top of the atmosphere.  This is a stabilising feedback.
 
-*  Water vapour feedback occurs when a temperature change alters the atmospheric water vapour content, altering the strength of the greenhouse effect.  This is an amplifying feedback.
+* Water vapour feedback occurs when a temperature change alters the atmospheric water vapour
+  content, altering the strength of the greenhouse effect.  This is an amplifying feedback.
 
-*  Lapse rate feedback occurs when a temperature change alters the atmospheric lapse rate, altering the strength of the greenhouse effect.  This is a stabilising feedback.
+* Lapse rate feedback occurs when a temperature change alters the vertical temperature profile,
+  changing the strength of the greenhouse effect.  This is a stabilising feedback.
 
 *  Ice-albedo feedback occurs when a temperature change alters the amount of ice on Earth, changing the Earth's albedo.  This is an amplifying feedback.
 
-*  Cloud feedback occurs when a temperature change alters the average amount of cloud cover, changing the amount of long wave trapped and short wave reflected by the clouds. This is an amplifying feedback. 
+*  Cloud feedback occurs when a temperature change alters the average amount of cloud cover,
+  changing the amount of long wave trapped and short wave reflected by the clouds. This is an
+  amplifying feedback.
 
-*  The strength of climate feedbacks determine the size of the climate sensitivity. 
+* The strength of climate feedbacks determine the size of the climate sensitivity. 
 
-*  $$\lambda =-\frac{1}{\sum f_{i} } $$
+* $\lambda =-\frac{1}{\sum f_{i} }$
 
-*  The strength of the climate feedbacks can be determined by calculating how much the climate changes when the feedback system changes and multiplying that by how much the heat flux at the top of the atmosphere changes when the feedback system changes. 
+* The strength of the climate feedbacks can be determined by calculating how much the climate
+  changes when the feedback system changes and multiplying that by how much the heat flux at the
+  top of the atmosphere changes when the feedback system changes.
 
 *  $f_{x} =\frac{\Delta R}{\Delta T} =\left(\frac{\Delta R}{\Delta climate_{x} } \right)\left(\frac{\Delta climate_{x} }{\Delta T} \right)$
 
 *  The water vapour feedback is the strongest climate feedback, and the cloud feedback is the most uncertain.
 
-   If the net climate feedback factor ever goes above 0, the climate would enter into {runaway
-   feedback}, in which temperature increases would increase the amount of heat flux into the
-   climate, and the climate would change radically.
+* If the net climate feedback factor ever goes above 0, the climate would enter into {runaway
+  feedback}, in which temperature increases would increase the amount of heat flux into the
+  climate, and the climate would change radically.  Luckily, the amount of $CO_2$ required
+  for this to happen on Earth is greater than the available fossil fuel reservoir.
 
 
